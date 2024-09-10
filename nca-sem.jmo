@@ -1,0 +1,172 @@
+{
+  "jamovi": {
+    "title": "NCA-SEM",
+    "name": "ncasem",
+    "version": "1.0.0",
+    "description": "Um módulo para realizar análise de condição necessária (NCA) a partir de modelos de equações estruturais (SEM).",
+    "author": "Pessoa Jr",
+    "maintainer": "Pessoa Jr <pessoa.jr@example.com>",
+    "analyses": [
+      {
+        "name": "ncasemlj",
+        "title": "NCA-SEM",
+        "description": "Necessary Condition Analysis for Structural Equation Modeling",
+        "menuGroup": "SEM",
+        "menuTitle": "NCA-SEM",
+        "menuSubgroup": "Analysis",
+        "options": {
+          "data": {
+            "type": "Data",
+            "description": "The data as a data frame"
+          },
+          "syntax": {
+            "title": "Model Syntax",
+            "type": "String",
+            "description": "Lavaan model syntax",
+            "default": "Motivation =~ Mot1 + Mot2 + Mot3\nPerformance =~ Des1 + Des2 + Des3\nPerformance ~ Motivation"
+          },
+          "estimator": {
+            "title": "Estimator",
+            "type": "List",
+            "description": "The estimator to be used",
+            "options": [
+              "ML",
+              "GLS",
+              "WLS",
+              "ULS"
+            ],
+            "default": "ML"
+          },
+          "likelihood": {
+            "title": "Likelihood",
+            "type": "List",
+            "description": "The likelihood approach to be used",
+            "options": [
+              "normal",
+              "wishart"
+            ],
+            "default": "normal"
+          },
+          "missing": {
+            "title": "Missing",
+            "type": "List",
+            "description": "The method for handling missing data",
+            "options": [
+              "listwise",
+              "fiml"
+            ],
+            "default": "listwise"
+          },
+          "constraints_examples": {
+            "title": "Syntax Examples",
+            "type": "Bool",
+            "default": false
+          },
+          "lavaan_options": {
+            "title": "Lavaan Options",
+            "type": "Bool",
+            "default": false
+          },
+          "ceiling": {
+            "title": "Ceiling",
+            "type": "List",
+            "description": "The type of ceiling line to use for NCA",
+            "options": [
+              "ce.fdh",
+              "cr.fdh"
+            ],
+            "default": "ce.fdh"
+          },
+          "necessaryEffect": {
+            "type": "Array",
+            "title": "Efeitos Necessários",
+            "items": {
+              "type": "Object",
+              "properties": {
+                "name": {
+                  "type": "String",
+                  "title": "Nome do Efeito",
+                  "default": "Motivation -> Performance"
+                },
+                "cause": {
+                  "type": "Variable",
+                  "title": "Causa",
+                  "suggested": [
+                    "continuous"
+                  ],
+                  "permitted": [
+                    "numeric"
+                  ]
+                },
+                "effect": {
+                  "type": "Variable",
+                  "title": "Efeito",
+                  "suggested": [
+                    "continuous"
+                  ],
+                  "permitted": [
+                    "numeric"
+                  ]
+                }
+              }
+            }
+          },
+          "sufficientCause": {
+            "type": "Array",
+            "title": "Causas Suficientes",
+            "items": {
+              "type": "String"
+            },
+            "default": []
+          }
+        },
+        "results": {
+          "necessityThreshold": {
+            "title": "Limiar de Necessidade",
+            "type": "Number"
+          },
+          "caseProportion": {
+            "title": "Proporção de Casos",
+            "type": "Number"
+          },
+          "modelParameters": {
+            "title": "Parâmetros do Modelo",
+            "type": "Table",
+            "columns": [
+              {
+                "name": "parameter",
+                "title": "Parâmetro"
+              },
+              {
+                "name": "estimate",
+                "title": "Estimativa"
+              },
+              {
+                "name": "se",
+                "title": "Erro Padrão"
+              },
+              {
+                "name": "pvalue",
+                "title": "Valor P"
+              }
+            ]
+          },
+          "fitIndices": {
+            "title": "Índices de Ajuste",
+            "type": "Table",
+            "columns": [
+              {
+                "name": "index",
+                "title": "Índice"
+              },
+              {
+                "name": "value",
+                "title": "Valor"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}
