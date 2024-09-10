@@ -2,8 +2,8 @@ Package: nca_sem_jamovi
 Type: Package
 Title: NCA Analysis from SEM in Jamovi
 Version: 0.1.0
-Author: Seu Nome
-Maintainer: Seu Email
+Author: Pessoa Jr
+Maintainer: pessoajr@gmail.com
 Description: Performs Necessary Condition Analysis (NCA) based on Structural Equation Modeling (SEM) results in Jamovi.
 License: GPL-3
 Imports: 
