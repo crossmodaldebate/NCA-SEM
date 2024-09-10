@@ -1,9 +1,4 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: R
+name: R Workflow
 
 on:
   push:
@@ -19,17 +14,20 @@ jobs:
     runs-on: macos-latest
     strategy:
       matrix:
-        r-version: ['4.1.1']
+        r-version: ['3.6.3']
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up R ${{ matrix.r-version }}
+      - name: Configure R ${{ matrix.r-version }}
         uses: r-lib/actions/setup-r@v2
         with:
           r-version: ${{ matrix.r-version }}
-      - name: Install dependencies
+      - name: Instalar dependências
         run: |
           install.packages(c("remotes", "rcmdcheck"))
           remotes::install_deps(dependencies = TRUE)
         shell: Rscript {0}
-      - name: Check with rcmdcheck
+      - name: Verificar com rcmdcheck
+        run: |
+          rcmdcheck::rcmdcheck()
+        shell: Rscript {0}
