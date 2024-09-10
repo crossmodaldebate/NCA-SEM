@@ -20,3 +20,7 @@ Obrigado por considerar contribuir para o NCA-SEM!
 2. Crie uma branch para sua contribuição.
 3. Faça as alterações necessárias.
 4. Envie um pull request.
+
+## Referências
+https://pdfs.semanticscholar.org/1dfc/5e6b06d63bb7402d8ca95a4b2babbdb86fb2.pdf
+https://www.sciencedirect.com/science/article/abs/pii/S1447677021001170
