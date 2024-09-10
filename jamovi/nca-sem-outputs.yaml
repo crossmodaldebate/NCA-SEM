@@ -1,0 +1,27 @@
+outputs:
+  - name: necessityThreshold
+    title: Limiar de Necessidade
+    type: Number
+  - name: caseProportion
+    title: Proporção de Casos
+    type: Number
+  - name: modelParameters
+    title: Parâmetros do Modelo
+    type: Table
+    columns:
+      - name: parameter
+        title: Parâmetro
+      - name: estimate
+        title: Estimativa
+      - name: se
+        title: Erro Padrão
+      - name: pvalue
+        title: Valor P
+  - name: fitIndices
+    title: Índices de Ajuste
+    type: Table
+    columns:
+      - name: index
+        title: Índice
+      - name: value
+        title: Valor

@@ -1,0 +1,31 @@
+{
+  "name": "NCA-SEM",
+  "description": "Necessary Condition Analysis - Structural Equation Modeling",
+  "version": "1.0.0",
+  "author": "Pessoa Jr",
+  "dependencies": {
+    "r-script": "^1.0.0"
+  },
+  "scripts": {
+    "start": "node nca-sem.js"
+  },
+  "config": {
+    "lavaan": {
+      "library": "lavaan"
+    }
+  },
+  "models": [
+    {
+      "name": "NCA-SEM Model",
+      "description": "NCA-SEM Model",
+      "model": "nca-sem-model.yaml"
+    }
+  ],
+  "data": [
+    {
+      "name": "Data",
+      "description": "Data",
+      "data": "data.csv"
+    }
+  ]
+}

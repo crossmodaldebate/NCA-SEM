@@ -1,0 +1,7 @@
+model:
+  title: Modelo SEM
+  type: String
+  default: |
+    Motivation =~ Mot1 + Mot2 + Mot3
+    Performance =~ Des1 + Des2 + Des3
+    Performance ~ Motivation

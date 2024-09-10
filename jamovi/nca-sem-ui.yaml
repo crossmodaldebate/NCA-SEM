@@ -1,0 +1,57 @@
+ui:
+  title: Análise de Necessidade via SEM
+  sections:
+    - name: data
+      title: Dados
+      fields:
+        - name: dataFile
+          type: File
+          title: Arquivo de Dados
+          extensions: [csv, txt]  # Extensões permitidas
+        - name: variables
+          type: Variable
+          title: Variáveis
+          suggested:
+            - continuous
+          permitted:
+            - numeric
+    - name: model
+      title: Modelo
+      fields:
+        - name: cause
+          type: Variable
+          title: Causa
+          suggested:
+            - continuous
+          permitted:
+            - numeric
+        - name: effect
+          type: Variable
+          title: Efeito
+          suggested:
+            - continuous
+          permitted:
+            - numeric
+    - name: options
+      title: Opções
+      fields:
+        - name: necessityThreshold
+          type: CheckBox
+          title: Limiar de Necessidade
+          default: true
+        - name: caseProportion
+          type: CheckBox
+          title: Proporção de Casos
+          default: true
+        - name: modelParameters
+          type: CheckBox
+          title: Parâmetros do Modelo
+          default: true
+        - name: fitIndices
+          type: CheckBox
+          title: Índices de Ajuste
+          default: true
+  buttons:
+    - name: run
+      title: Executar
+      type: Submit

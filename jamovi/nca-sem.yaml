@@ -1,0 +1,13 @@
+name: ncaSem
+title: Análise NCA-SEM
+version: 1.0.0
+description: Um módulo para realizar análise de condição necessária (NCA) a partir de modelos de equações estruturais (SEM).
+author: "Pessoa Jr"
+maintainer: "Pessoa Jr <pessoa.jr@example.com>" 
+analyses:
+  - ncaSemAnalysis
+jrs:
+  - 'nca-sem-analysis.yaml'
+  - 'nca-sem-model.yaml'
+  - 'nca-sem-outputs.yaml'
+  - 'nca-sem-ui.yaml'
