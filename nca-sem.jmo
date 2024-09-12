@@ -6,6 +6,12 @@
     "description": "Um módulo para realizar análise de condição necessária (NCA) a partir de modelos de equações estruturais (SEM).",
     "author": "Pessoa Jr",
     "maintainer": "Pessoa Jr <pessoa.jr@example.com>",
+    "dependencies": [
+      "lavaan",
+      "NCA",
+      "semPlot",
+      "jmv" 
+    ],
     "analyses": [
       {
         "name": "ncasemlj",
