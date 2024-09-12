@@ -1,21 +1,17 @@
 name: R-CMD-check
-
 on:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
 permissions:
   contents: read
-
 jobs:
   build:
     runs-on: macos-latest
     strategy:
       matrix:
         r-version: ['4.1.1']  # Versão do R desejada
-
     steps:
       - uses: actions/checkout@v4  # Faz checkout do código
 
