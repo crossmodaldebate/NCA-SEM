@@ -1,0 +1,41 @@
+name: Publicar Pacote Node.js
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  testar-e-construir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Instalar Dependências
+        run: npm ci
+      - name: Executar Testes
+        run: npm test
+
+  publicar-no-github-packages:
+    needs: testar-e-construir
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+      - name: Configurar Node.js para GitHub Packages
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://npm.pkg.github.com/
+      - name: Instalar Dependências
+        run: npm ci
+      - name: Publicar Pacote
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
